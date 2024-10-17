@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 h-screen flex items-center justify-center">
+    <div
+      id="notification"
+      class="mb-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-md text-center hidden"
+    >
+      Login successful!
+    </div>
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+      <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label for="username" class="block text-sm font-medium text-gray-700"
+            >Username</label
+          >
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            minlength="10"
+            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+            placeholder="Enter your username"
+          />
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700"
+            >Password</label
+          >
+          <div class="relative">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              minlength="13"
+              class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+              placeholder="Enter your password"
+            />
+            <button
+              type="button"
+              id="toggle"
+              class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+              onclick="togglePassword()"
+            >
+              <svg
+                class="h-6 w-6 text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div>
+          <label for="role" class="block text-sm font-medium text-gray-700"
+            >Role</label
+          >
+          <select
+            id="role"
+            name="role"
+            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm rounded-md"
+          >
+            <option value="student">Student</option>
+            <option value="lecturer">Lecturer</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="button"
+            id="loginButton"
+            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+            onclick="submitLogin()"
+            value="Log in"
+          />
+        </div>
+      </form>
+      <div id="errorMessage" class="mt-4 text-center text-red-500 hidden"></div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
